@@ -80,3 +80,35 @@ h2 {
     color: #333;
   }
 }
+.image-container {
+  img {
+    width: 700px;
+    height: auto;
+    margin-left: 800px;
+    opacity: 0;
+    animation:
+      fadeIn 2.5s ease forwards 1.4s,
+      floatUpDown 10s ease-in-out infinite 2.4s;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

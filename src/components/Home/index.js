@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import LogoTitle from '../../assets/images/logo-x.png'
+import LogoBig from '../../assets/images/profile.png'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 const Home = () => {
@@ -43,7 +44,7 @@ const Home = () => {
       setLetterClass('text-animate-hover')
     }, 6000)
 
-    return () => clearTimeout(timer) // ✅ Proper cleanup function
+    return () => clearTimeout(timer)
   }, [])
 
   return (
@@ -72,6 +73,9 @@ const Home = () => {
         <Link to="/contact" className="flat-button">
           Contact Me{' '}
         </Link>
+      </div>
+      <div className="image-container">
+        <img src={LogoBig} alt="Big Logo" className="big-logo" />
       </div>
     </div>
   )
