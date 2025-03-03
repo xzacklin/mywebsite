@@ -39,7 +39,9 @@
 }
 
 .abt-page,
-.contact-page {
+.contact-page,
+.work-page,
+.portfolio-page {
   .text-zone {
     position: absolute;
     left: 10%;
@@ -56,6 +58,7 @@
       margin-top: 50px;
       margin-bottom: 40px;
       position: relative;
+      white-space: nowrap;
     }
 
     p {

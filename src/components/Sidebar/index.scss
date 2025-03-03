@@ -86,6 +86,16 @@
         content: 'CONTACT';
       }
     }
+    a.experience-link {
+      &::after {
+        content: 'WORK';
+      }
+    }
+    a.portfolio-link {
+      &::after {
+        content: 'PORTFOLIO';
+      }
+    }
     a.active {
       svg {
         color: #ffd700;
