@@ -2,18 +2,20 @@ import './index.scss'
 import { useState, useEffect } from 'react'
 import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
+import Projects from './Projects'
 
 const Portfolio = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const nameArray = [
     'P',
-    'e',
-    'r',
-    's',
     'o',
-    'n',
-    'a',
+    'r',
+    't',
+    'f',
+    'o',
     'l',
+    'i',
+    'o',
     '',
     'P',
     'r',
@@ -31,10 +33,9 @@ const Portfolio = () => {
 
     return () => clearTimeout(timer)
   }, [])
-
   return (
     <>
-      <div className="container portfolio-page">
+      <div className="container work-page">
         <div className="text-zone">
           <h1>
             <AnimatedLetters
@@ -43,6 +44,7 @@ const Portfolio = () => {
               idx={15}
             />
           </h1>
+          <Projects />
         </div>
       </div>
       <Loader type="pacman" />

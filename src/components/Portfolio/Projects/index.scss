@@ -1,14 +1,13 @@
-.expandable-box-container {
+.expandable-project-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 40px;
+  flex-direction: row;
+
   gap: 20px;
   padding: 20px;
-  min-width: 350px;
+  min-width: 400px;
 }
 
-.expandable-box {
+.expandable-project {
   width: 120%;
   max-width: 600px;
   background-color: #b6d0e2;
