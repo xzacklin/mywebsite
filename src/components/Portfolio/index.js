@@ -6,6 +6,9 @@ import Projects from './Projects'
 
 const Portfolio = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [loading, setLoading] = useState(true)
+  const [visibleCards, setVisibleCards] = useState(0)
+
   const nameArray = [
     'P',
     'o',
@@ -26,13 +29,34 @@ const Portfolio = () => {
     't',
     's',
   ]
+
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const letterTimer = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 6000)
 
-    return () => clearTimeout(timer)
+    const loadingTimer = setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+
+    return () => {
+      clearTimeout(letterTimer)
+      clearTimeout(loadingTimer)
+    }
   }, [])
+
+  useEffect(() => {
+    if (!loading) {
+      const interval = setInterval(() => {
+        setVisibleCards((prev) => {
+          if (prev < 3) return prev + 1
+          clearInterval(interval)
+          return prev
+        })
+      }, 400)
+    }
+  }, [loading])
+
   return (
     <>
       <div className="container work-page">
@@ -44,10 +68,16 @@ const Portfolio = () => {
               idx={15}
             />
           </h1>
-          <Projects />
         </div>
+
+        {loading ? (
+          <div className="loader-wrapper">
+            <Loader type="pacman" />
+          </div>
+        ) : (
+          <Projects visibleCount={visibleCards} />
+        )}
       </div>
-      <Loader type="pacman" />
     </>
   )
 }

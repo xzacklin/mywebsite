@@ -1,12 +1,22 @@
+.text-zone {
+  position: relative;
+
+  p {
+    font-size: 1.8rem !important;
+    line-height: 1.6;
+    color: white;
+    font-weight: 400;
+  }
+}
+
 .stage-cube-cont {
   width: 50%;
   height: 100%;
   top: 0;
-  padding-top: 18%;
   margin-left: 0;
   position: absolute;
   right: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .cubespinner {
@@ -145,5 +155,18 @@
   .flat-button {
     font-size: 2vw;
     letter-spacing: 0.4em;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

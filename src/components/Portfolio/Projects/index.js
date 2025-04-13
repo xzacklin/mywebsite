@@ -1,66 +1,53 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './index.scss'
 import Quilly from '../../../assets/images/smartdiarylogo.png'
-import Beats from '../../../assets/images/housepredict.png'
-import Webacy from '../../../assets/images/tetris.jpeg'
+import Beats from '../../../assets/images/housepredicter.png'
+import Webacy from '../../../assets/images/terminaltetris.png'
 
-const Projects = () => {
-  const [boxes, setBoxes] = useState([
+const Projects = ({ visibleCount }) => {
+  const portfolioItems = [
     {
-      title: 'Smart Diary - Python | HTML | CSS',
       image: Quilly,
-      dateRange: 'October 2024 - January 2025',
+      title: 'Smart Diary – Python | HTML | CSS',
       description:
-        'Led a team of 4 in the development of a full-stack wellness diary web application using Flask, featuring a child-friendly diagnostic quiz and diary interface. Implemented sentiment analysis and keyword mapping with TextBlob to generate personalized wellness scores and tailored advice.',
-      expanded: false,
+        'Led a team of 4 in the development of a wellness diary app with sentiment analysis and tailored advice using TextBlob and Flask.',
+      url: 'https://github.com/xzacklin/aidiary.git',
     },
     {
-      title: ' Real Estate Predictor - Python',
       image: Beats,
-      dateRange: 'June 2024 - Augst 2024',
+      title: 'Real Estate Predictor – Python',
       description:
-        'Developed a housing price prediction model utilizing economic indicators to forecast real estate prices by merging, cleaning, and analyzing datasets, using Pandas, Numpy, Scikit Learn, Keras,  from the Federal Reserve and Zillow, with a focus on time series analysis.',
-      expanded: false,
+        'Built a time series prediction model using Zillow + Federal Reserve data to forecast home prices with Scikit-Learn and Keras.',
+      url: 'https://github.com/xzacklin/House-Price-Predictor.git',
     },
     {
-      title: 'Terminal Tetris - C',
       image: Webacy,
-      dateRange: 'Aoril 2024 - May 2024',
-      description: 'Analyzed smart contracts',
-      expanded: false,
+      title: 'Terminal Tetris – C',
+      description:
+        'Rebuilt Tetris in C for the terminal, focusing on game loop architecture, memory management, and grid rendering logic.',
+      url: 'https://github.com/xzacklin/Terminal-Tetris.git',
     },
-  ])
-
-  const toggleBox = (index) => {
-    setBoxes((prevBoxes) =>
-      prevBoxes.map((box, idx) =>
-        idx === index
-          ? { ...box, expanded: !box.expanded }
-          : { ...box, expanded: false }
-      )
-    )
-  }
+  ]
 
   return (
-    <div className="expandable-project-container">
-      {boxes.map((box, index) => (
+    <div className="images-container">
+      {portfolioItems.map((project, idx) => (
         <div
-          key={index}
-          className={`expandable-project ${box.expanded ? 'expanded' : ''}`}
-          onClick={() => toggleBox(index)}
+          key={idx}
+          className={`image-box ${idx < visibleCount ? 'slide-up' : 'hidden'}`}
         >
-          <div className="header">
-            <img src={box.image} alt={box.title} className="box-image" />
-            <div className="header-text">
-              <h2>{box.title}</h2>
-              <span className="date-range">{box.dateRange}</span>
-            </div>
+          <img
+            src={project.image}
+            alt={project.title}
+            className="portfolio-image"
+          />
+          <div className="content">
+            <p className="title">{project.title}</p>
+            <h4 className="description">{project.description}</h4>
+            <button className="btn" onClick={() => window.open(project.url)}>
+              View
+            </button>
           </div>
-          {box.expanded && (
-            <div className="content">
-              <p>{box.description}</p>
-            </div>
-          )}
         </div>
       ))}
     </div>
