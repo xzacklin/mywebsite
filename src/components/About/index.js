@@ -47,11 +47,12 @@ const About = () => {
               />
             </h1>
             <p>
-              I am an ambitious full-stack developer with a diverse background
-              that has instilled a strong sense of teamwork and effective
-              communication in me. I approach challenges with an analytical
-              mindset and a robust technical foundation. I am always eager to
-              learn, adapt, and explore new technologies with an open mind.
+              I am an ambitious full-stack developer with a a strong sense of
+              teamwork and effective communication. I approach challenges with
+              an analytical mindset and a robust technical foundation. I am
+              always eager to learn, adapt, and explore new technologies with an
+              open mind. Im passionate about user experience, machine learning,
+              protecting data, and applied cryptography.
             </p>
           </div>
 

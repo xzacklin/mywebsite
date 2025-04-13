@@ -69,3 +69,18 @@
     }
   }
 }
+.linkedin-icon {
+  position: fixed;
+  right: 70px;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 24vw;
+  height: 24vw;
+  font-size: 30vw;
+  color: #ffffff;
+  opacity: 0;
+  animation: fadeIn 2.5s ease forwards 1.8s;
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+}

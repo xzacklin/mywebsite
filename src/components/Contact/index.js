@@ -3,10 +3,12 @@ import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import Loader from 'react-loaders'
 import emailjs from '@emailjs/browser'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  const [isLoading, setIsLoading] = useState(true) // New state to track loading
+  const [isLoading, setIsLoading] = useState(true)
   const nameArray = ['C', 'o', 'n', 't', 'a', 'c', 't', '', 'M', 'e']
   const refForm = useRef()
 
@@ -18,8 +20,8 @@ const Contact = () => {
 
     // Simulate loader duration (e.g., 3 seconds)
     const loaderTimer = setTimeout(() => {
-      setIsLoading(false) // Loader finished, show content
-    }, 3000) // Adjust this duration to match your loader's animation
+      setIsLoading(false)
+    }, 3000)
 
     return () => {
       clearTimeout(animationTimer)
@@ -53,10 +55,9 @@ const Contact = () => {
   return (
     <>
       {isLoading ? (
-        // Show only the loader while loading
+        // Display the loader during the simulated loading period
         <Loader type="pacman" />
       ) : (
-        // Show content after loader finishes
         <div className="container contact-page fade-in">
           <div className="text-zone">
             <h1>
@@ -111,6 +112,16 @@ const Contact = () => {
         </div>
       )}
       <Loader type="pacman" style={{ display: isLoading ? 'block' : 'none' }} />
+
+      {/* LinkedIn Icon - Click it to open your LinkedIn profile */}
+      <a
+        href="https://www.linkedin.com/in/xzacklin"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="linkedin-icon"
+      >
+        <FontAwesomeIcon icon={faLinkedin} />
+      </a>
     </>
   )
 }
