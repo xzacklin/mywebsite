@@ -113,9 +113,9 @@ const Contact = () => {
       )}
       <Loader type="pacman" style={{ display: isLoading ? 'block' : 'none' }} />
 
-      {/* LinkedIn Icon - Click it to open your LinkedIn profile */}
+      {}
       <a
-        href="https://www.linkedin.com/in/xzacklin"
+        href="https://www.linkedin.com/in/xavier-zacklin/"
         target="_blank"
         rel="noopener noreferrer"
         className="linkedin-icon"
