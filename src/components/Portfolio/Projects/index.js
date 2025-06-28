@@ -1,31 +1,31 @@
 import React from 'react'
 import './index.scss'
-import Quilly from '../../../assets/images/smartdiarylogo.png'
-import Beats from '../../../assets/images/housepredicter.png'
-import Webacy from '../../../assets/images/terminaltetris.png'
+import DevLeveling from '../../../assets/images/dev-leveling.png'
+import RealEstatePredictor from '../../../assets/images/housepredicter.png'
+import SmartDiary from '../../../assets/images/quilly.png'
 
 const Projects = ({ visibleCount }) => {
   const portfolioItems = [
     {
-      image: Quilly,
+      image: DevLeveling,
+      title: 'Dev Leveling – Spring Boot',
+      description:
+        'Architected a “Solo Leveling”–themed microservices platform in Spring Boot (MVC) with Hibernate and PostgreSQL, enabling CS students to gamify and track job-prep progress.',
+      url: 'https://github.com/xzacklin/Dev-Leveling.git',
+    },
+    {
+      image: SmartDiary,
       title: 'Smart Diary – Python | HTML | CSS',
       description:
         'Led a team of 4 in the development of a wellness diary app with sentiment analysis and tailored advice using TextBlob and Flask.',
       url: 'https://github.com/xzacklin/aidiary.git',
     },
     {
-      image: Beats,
+      image: RealEstatePredictor,
       title: 'Real Estate Predictor – Python',
       description:
         'Built a time series prediction model using Zillow + Federal Reserve data to forecast home prices with Scikit-Learn and Keras.',
       url: 'https://github.com/xzacklin/House-Price-Predictor.git',
-    },
-    {
-      image: Webacy,
-      title: 'Terminal Tetris – C',
-      description:
-        'Rebuilt Tetris in C for the terminal, focusing on game loop architecture, memory management, and grid rendering logic.',
-      url: 'https://github.com/xzacklin/Terminal-Tetris.git',
     },
   ]
 
