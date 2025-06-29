@@ -2,7 +2,7 @@ import React from 'react'
 import './index.scss'
 import DevLeveling from '../../../assets/images/dev-leveling.png'
 import RealEstatePredictor from '../../../assets/images/housepredicter.png'
-import SmartDiary from '../../../assets/images/quilly.png'
+import SmartDiary from '../../../assets/images/smartdiarylogo.png'
 
 const Projects = ({ visibleCount }) => {
   const portfolioItems = [
